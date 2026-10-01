@@ -42,12 +42,13 @@
       <li><a href="classes.html">Classes</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="admissions.html">Admissions</a></li>
-      <li><a href="teachers.html">Teachers</a></li>
+      <li><a href="teachers.html" class="active">Teachers</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <a class="btn btn-gold" href="admissions.html" style="padding:9px 18px;font-size:.88rem;">Apply Now</a>
   </nav>
 </header>
+
 <section id="teachers">
   <div class="wrap">
     <div class="section-head">
@@ -69,6 +70,17 @@
     <span>Website by Atlas One</span>
   </div>
 </footer>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+  const toggleBtn = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  }
+</script>
 
 </body>
 </html>
