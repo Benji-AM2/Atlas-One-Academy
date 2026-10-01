@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- TOPBAR -->
 <div class="topbar">
   <div class="wrap">
     <div class="topbar-left">
@@ -24,10 +25,10 @@
   </div>
 </div>
 
+<!-- HEADER WITH MOBILE MENU -->
 <header>
   <nav class="main">
     <div class="brand">
-      <!-- Mobile Hamburger Button -->
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
         <span></span>
         <span></span>
@@ -37,7 +38,7 @@
       <span class="brand-name">Atlas One Academy</span>
     </div>
     <ul class="navlinks" id="navLinks">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="classes.html">Classes</a></li>
       <li><a href="gallery.html">Gallery</a></li>
@@ -61,12 +62,24 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="wrap footer-wrap">
     <span>© 2026 Atlas One Academy. All rights reserved.</span>
     <span>Website by Atlas One</span>
   </div>
 </footer>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+  const toggleBtn = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  }
+</script>
 
 </body>
 </html>
