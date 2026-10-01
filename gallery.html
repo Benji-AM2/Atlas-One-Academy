@@ -9,7 +9,46 @@
 </head>
 <body>
 
-<!-- PASTE TOPBAR AND HEADER HERE (Same as index.html) -->
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-info">
+      <a href="tel:+233000000000">+233 00 000 0000</a>
+      <a href="mailto:info@atlasoneacademy.edu.gh">info@atlasoneacademy.edu.gh</a>
+      <span>Accra, Ghana</span>
+    </div>
+    <div class="topbar-social">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">X</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER WITH MOBILE MENU -->
+<header>
+  <nav class="main">
+    <div class="brand">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="crest">A1</div>
+      <span class="brand-name">Atlas One Academy</span>
+    </div>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="teachers.html">Teachers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn-gold" href="admissions.html" style="padding:9px 18px;font-size:.88rem;">Apply Now</a>
+  </nav>
+</header>
 
 <section id="gallery">
   <div class="wrap">
@@ -38,19 +77,34 @@
   </div>
 </section>
 
-<!-- PASTE FOOTER HERE -->
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Atlas One Academy. All rights reserved.</p>
+  </div>
+</footer>
 
 <script>
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.filter;
-    document.querySelectorAll('.g-item').forEach(item=>{
-      item.classList.toggle('hide', f!=='all' && item.dataset.cat!==f);
+  // Mobile Menu Toggle
+  const toggleBtn = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  }
+
+  // Gallery Filters
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f=btn.dataset.filter;
+      document.querySelectorAll('.g-item').forEach(item=>{
+        item.classList.toggle('hide', f!=='all' && item.dataset.cat!==f);
+      });
     });
   });
-});
 </script>
 </body>
 </html>
